@@ -56,8 +56,8 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
     We would like to emphasize twice that our work is not intended to be a direct comparison with existing methods, but rather to demonstrate the effectiveness of our approach in a more general setting. However, we added some comparison of our method with PPO, SAC, TD3, TQC, CrossQ and DQN. The numerical results can be found here 
     <div>
-    <img src="./figure/Pendulum_value.png" width="500"/>
-    <img src="./figure/CartPole_value.png" width="500"/>
+    <img src="./figure/Pendulum_value.png" width="250"/>
+    <img src="./figure/CartPole_value.png" width="250"/>
     </div>
 
     We want to cariify that the results are not directly comparable, since the methods are designed for different settings, which we refer to repsond to reviewer yqHf for more details.
@@ -74,7 +74,7 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
     Following the reviewer’s suggestion, we added comparisons with **DDPG**, **PPO**, **SAC**, **TD3**, **TQC**, and **CrossQ** (using the [stable-baselines3 implementions]("https://github.com/araffin/sbx") ) on **Pendulum-v1** as well as PPO and DQN on **CartPole-v1**. The numerical results can be found here 
     
-    <img src="./figure/Pendulum_value.png" width="500"/>  <img src="./figure/CartPole_value.png" width="500"/>
+    <img src="./figure/Pendulum_value.png" width="250"/>  <img src="./figure/CartPole_value.png" width="250"/>
 
     Below is the computational time for each method over 100,000 steps:
 
