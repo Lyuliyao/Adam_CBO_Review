@@ -63,6 +63,7 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
     We want to cariify that the results are not directly comparable, since the methods are designed for different settings, which we refer to repsond to reviewer yqHf for more details.
 
 
+
 # Reviewer yqHf
 Thank you for your insightful comments and thoughtful suggestions for improving our work.
 
@@ -136,19 +137,20 @@ Thank you for your thoughtful review and valuable feedback.
 1. **On “ Assumption 4.1.4”**
 
     Indeed, the assumption can be generalized as 
-
-    $$J(\theta) -J(\tilde \theta)  \geq \|\theta - \tilde \theta \|^\mu$$ 
-
-    for some exponent $\mu>0$ .
-    When $\mu=2$, the condition is in general correct if $J$ is continuous near the minimum points $\mu=2$, becase
-
-    $$J(\theta) = J(\tilde \theta) + \nabla J(\tilde \theta)^T (\theta - \tilde \theta) + \frac{1}{2} (\theta - \tilde \theta)^T \nabla^2 J(\tilde \theta) (\theta - \tilde \theta) + o(\|\theta - \tilde \theta\|^2)
+    $$\|\theta - \tilde\theta\| \leq \frac{(\mathcal{J} -\underline{ J})^\mu}{\eta}$$ 
+    for some $\mu,\eta>0$ .
+    When $\mu=\frac{1}{2}$, the condition is in general correct if $J$ is continuous near the minimum points, becase
+    $$
+    J(\theta) = J(\tilde \theta) + \nabla J(\tilde \theta)^T (\theta - \tilde \theta) + \frac{1}{2} (\theta - \tilde \theta)^T \nabla^2 J(\tilde \theta) (\theta - \tilde \theta) + o(\|\theta - \tilde \theta\|^2)
     \\
     = J(\tilde \theta) + \frac{1}{2} (\theta - \tilde \theta)^T \nabla^2 J(\tilde \theta) (\theta - \tilde \theta) + o(\|\theta - \tilde \theta\|^2)\\
-    \geq J(\tilde \theta) + \eta \|\|\theta - \tilde \theta\|^2,$$ 
-
-    where $\eta$ is the smaller eigenvalue of Hessian matrix $\nabla^2 J(\tilde \theta)$ which is positive.
-    [Download the modified Proof for more detail](./proof.pdf)
+    \geq  J(\tilde \theta)  + C \|\theta - \tilde \theta\|^2,
+    $$ 
+    where $C$ is the smallest eigenvalue of Hessian matrix $\nabla^2 J(\tilde \theta)$ which is positive at minimum. The revised version of the proof can be seen in here.
+    <img src="icml_proof-1.png" width="500"/>
+    <img src="icml_proof-2.png" width="500"/>
+    <img src="icml_proof-3.png" width="500"/>
+    <img src="icml_proof-4.png" width="500"/>
     
     **On the Clarification**
 
