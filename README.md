@@ -32,7 +32,7 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
     We would like to emphasize that our primary goal is to address a more general class of stochastic control problems than those typically handled by existing methods. As discussed in our response to Reviewer NtTj, most conventional approaches rely on access to either model gradients or infinitesimal time horizons, whereas our method operates in a model-free, finite-horizon setting—a scenario that is less explored in the literature.
 
-    That said, we appreciate the reviewer’s suggestion and have applied our method to control problems involving 2, 4, and 50 agents, similar in spirit to [1]. The corresponding numerical results can be found here. <img src="figure/path.png" width="500"/>
+    That said, we appreciate the reviewer’s suggestion and have applied our method to control problems involving 2, 4, and 50 agents, similar in spirit to [1]. The corresponding numerical results can be found [here](figure/path.png). <img src="figure/path.png" width="500"/>
     
     We note, however, that our setup differs from [1] in important ways: our approach is based on closed-loop (feedback) control, while [1] employs open-loop control. Furthermore, [1] treats obstacles as hard constraints, whereas we model them as soft constraints through penalization in the cost function. Due to these differences, a direct comparison is not meaningful, but we believe our results still highlight the scalability and flexibility of our approach.
 
@@ -40,11 +40,11 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
     We appreciate the reviewer’s suggestion and we want to added two experiments to explain the role of adjustable Gaussian noise. 
 
-    The fist one, we compare the result of cbo with and without gaussian noise when optimizing a two dimensional Rastigrin function.The numerical result can be found here. <img src="./figure/demo.png" width="500"/> 
+    The fist one, we compare the result of cbo with and without gaussian noise when optimizing a two dimensional Rastigrin function.The numerical result can be found [here](figure/demo.png). <img src="figure/demo.png" width="500"/> 
     
     The starting points are normal distribution centered at [3,3] or [-3,-3] for the two cases respectively. The cbo with gaussian noise can escape from the local minimum and find the global minimum, while the cbo without gaussian noise is stuck in the local minimum. 
 
-    The second case, we show the evolution of one parameter in the neural network when training the LQG probelm under fixed Gaussian and adjustable Gaussian noise. The numerical result can be found here. <img src="./figure/gaussian_value.png" width="500"/> 
+    The second case, we show the evolution of one parameter in the neural network when training the LQG probelm under fixed Gaussian and adjustable Gaussian noise. The numerical result can be found [here](./figure/gaussian_value.png). <img src="figure/gaussian_value.png" width="500"/> 
     
     If we fix a large Gaussian noise, the parameter can explore more (the parameters are more different from the starting points), but it will keep high variance in a long time and cannot converge. If we fix a small Gaussian noise, the parameter can converge very fast, but it do not explore too much on the space (the parameters are close to the starting points). If we use adjustable Gaussian noise, the parameter can explore more at the beginning and converge fast at the end. The adjustable Gaussian noise give us many flexibility to balance the exploration and exploitation. If we know the parameter is close to the optimal solution, for some fine-tuning problems, we can use a small Gaussian noise to converge fast. If we are not sure the parameter is close to the optimal solution, we can use a large Gaussian noise to explore more and iteratively reduce the noise to converge.
 
@@ -54,10 +54,10 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
 3. **On the concern about "the lack of comparison to existing methods"**
 
-    We would like to emphasize twice that our work is not intended to be a direct comparison with existing methods, but rather to demonstrate the effectiveness of our approach in a more general setting. However, we added some comparison of our method with PPO, SAC, TD3, TQC, CrossQ and DQN. The numerical results can be found here 
+    We would like to emphasize twice that our work is not intended to be a direct comparison with existing methods, but rather to demonstrate the effectiveness of our approach in a more general setting. However, we added some comparison of our method with PPO, SAC, TD3, TQC, CrossQ and DQN. The numerical results can be found [here](./figure/Pendulum_value.png) and [here](./figure/CartPole_value.png).
     <div>
-    <img src="./figure/Pendulum_value.png" width="250"/>
-    <img src="./figure/CartPole_value.png" width="250"/>
+    <img src="figure/Pendulum_value.png" width="250"/>
+    <img src="figure/CartPole_value.png" width="250"/>
     </div>
 
     We want to cariify that the results are not directly comparable, since the methods are designed for different settings, which we refer to repsond to reviewer yqHf for more details.
@@ -73,9 +73,9 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
     That said, we do compare with an HJB-based method and show that our approach achieves  **better accuracy using significantly less information** (i.e., no model access).
 
-    Following the reviewer’s suggestion, we added comparisons with **DDPG**, **PPO**, **SAC**, **TD3**, **TQC**, and **CrossQ** (using the [stable-baselines3 implementions]("https://github.com/araffin/sbx") ) on **Pendulum-v1** as well as PPO and DQN on **CartPole-v1**. The numerical results can be found here 
+    Following the reviewer’s suggestion, we added comparisons with **DDPG**, **PPO**, **SAC**, **TD3**, **TQC**, and **CrossQ** (using the [stable-baselines3 implementions]("https://github.com/araffin/sbx") ) on **Pendulum-v1** as well as PPO and DQN on **CartPole-v1**. The numerical results can be found [here](./figure/Pendulum_value.png) and [here](./figure/CartPole_value.png).
     
-    <img src="./figure/Pendulum_value.png" width="250"/>  <img src="./figure/CartPole_value.png" width="250"/>
+    <img src="figure/Pendulum_value.png" width="250"/>  <img src="figure/CartPole_value.png" width="250"/>
 
     Below is the computational time for each method over 100,000 steps:
 
@@ -111,7 +111,7 @@ Thank you for your insightful comments and thoughtful suggestions for improving 
 
 5. **On "Real-world large-scale SOC examples / scalability?"**
     
-    We added tests on 2, 4, and 50-agent control scenarios. Results are available here. 
+    We added tests on 2, 4, and 50-agent control scenarios. Results are available [here](figure/path.png).
     
     <img src="figure/path.png" width="500"/> 
     
